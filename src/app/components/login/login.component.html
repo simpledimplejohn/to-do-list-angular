@@ -1,0 +1,39 @@
+<div class="mt-4 p-4 bg-light border" rounded>
+  <h2>Login</h2>
+  <br />
+  <form>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        [(ngModel)]="user.email"
+        name="email"
+        type="email"
+        class="form-control"
+        id="email"
+        aria-describedby="emailHelp"
+      />
+    </div>
+
+    <div class="mb-3 w-25">
+      <label for="password" class="form-label">Password</label>
+      <input
+        [(ngModel)]="user.password"
+        name="password"
+        type="password"
+        class="form-control"
+        id="password"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="login()">
+      Submit
+    </button>
+  </form>
+</div>
+<div class="mt-4 p-4 bg-light border" rounded>
+  <div *ngIf="clientMessage.message.length > 0">
+    {{ clientMessage.message }}
+    <br />
+    <p>stored object firstName is:</p>
+    {{ user.firstName }}
+  </div>
+</div>

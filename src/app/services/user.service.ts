@@ -1,3 +1,4 @@
+import { ToDoList } from './../model/ToDoList';
 import { User } from './../model/user';
 import { localUrl } from './../../environments/environment';
 import { Injectable } from '@angular/core';
@@ -21,6 +22,13 @@ export class UserService {
       .post<User>(`${url}/add`, user, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
+
+  public getWithEmailAndPassword(user: string) : Observable<User> {
+    return this.http.post<User>(`${url}/find`, user, this.httpOptions)
+      .pipe(catchError(this.handleError))
+  }
+
+
 
   // standard HTTP error handling method
   private handleError(httpError: HttpErrorResponse) {
