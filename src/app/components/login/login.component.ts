@@ -27,8 +27,7 @@ export class LoginComponent implements OnInit {
       this.user = data;
       this.clientMessage.message = `Successfully login ${data.firstName}`
       this.router.navigate(['/lists'])
-    }
-    )
+    });
   }
 
   ngOnInit(): void {
