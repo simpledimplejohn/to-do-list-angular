@@ -1,5 +1,11 @@
 export class User {
   id: number;
+  firstName: string;
+  lastName: string;
+  userName: string;
+  email: string;
+  password: string;
+  listOfList: [];
 
   constructor(
     id: number,
@@ -18,10 +24,5 @@ export class User {
     this.password = password
     this.listOfList = listOfList
   }
-  firstName: string;
-  lastName: string;
-  userName: string;
-  email: string;
-  password: string;
-  listOfList: [];
+
 }
