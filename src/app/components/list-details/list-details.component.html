@@ -7,7 +7,16 @@
   <ul *ngFor="let item of itemList" class="list-group w-50">
     <li class="list-group-item">Created: {{item.dateCreated}}</li>
     <li class="list-group-item">Description: {{item.description}}</li>
+    <li class="list-group-item">Completed: {{item.completed}}</li>
+
+    <button type="button" class="btn button-secondary">Mark Complete</button>
+    <button type="button" class="btn button-primary">Delete Item</button>
+
     <br/>
 
   </ul>
+  <div>
+    <button type="button" class="btn button-primary">Add Item</button>
+  </div>
+
 </div>
