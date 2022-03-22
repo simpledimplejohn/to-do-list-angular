@@ -28,13 +28,17 @@ export class ListsComponent implements OnInit {
   ngOnInit(): void {
     // call this users list of ToDoLists and print
     this.findUsersLists(this.uid);
+    console.log(this.user);
+    // this.findUser(this.uid);
 
 
 
   }
 
   findUser(id: number) {
-    // this.uServ.
+    this.uServ.getUserById(id).subscribe((data) => {
+      this.user = data;
+    })
   }
 
   findUsersLists(id: number) {

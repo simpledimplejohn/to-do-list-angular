@@ -17,6 +17,11 @@ export class UserService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
+  public getUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${url}/users/${id}`)
+      .pipe(catchError(this.handleError));
+  }
+
   public addUser(user: User): Observable<User> {
     return this.http
       .post<User>(`${url}/add`, user, this.httpOptions)
@@ -25,7 +30,12 @@ export class UserService {
 
   public getWithEmailAndPassword(user: string) : Observable<User> {
     return this.http.post<User>(`${url}/find`, user, this.httpOptions)
-      .pipe(catchError(this.handleError))
+      .pipe(catchError(this.handleError));
+  }
+
+  public getUsersListOfList(id: number): Observable<ToDoList[]> {
+    return this.http.get<ToDoList[]>(`${url}/${id}/findLists`)
+      .pipe(catchError(this.handleError));
   }
 
 
