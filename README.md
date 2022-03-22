@@ -1,27 +1,58 @@
 # ToDoList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+This is a Mini Project created in 8 hours as an onboarding activity for Revature.
+
+## About
+
+A full-stack web-app to create and store different to-do-lists to a user account that can be accessed anywhere.
+
+Created By John Blalock
+
+## User Stories
+
+- User can sign-up to create an account that will let the access their lists.
+- User can log-in and create a list.
+- User can add or remove tasks from this list as well as marking them as done.
+- A user can add and remove lists from their account as well as marking them as done.
+
+## Technologies used
+
+- Angular 13.1
+- Angular CLI
+- Reactive Forms
+- Spring-Boot
+- postgreSQL
+- Lombock
+
+## Features Currently Available
+
+Front End
+- User can create an account
+- User can login
+Back End
+- CRUD methods for a User
+- CRUD methods for a Users List of Lists
+- CRUD methods for the items in a list
+
+## Features to add
+
+Front End implementation of CRUD
+- Add/remove/complete list to user
+- Add/remove/complete items in to-do-list
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Back End Spring Boot Repo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- github repo at [Back-End](https://github.com/simpledimplejohn/to-do-list-spring-boot)
 
-## Build
+### __License__
+This software is licensed under the [BSD license](license.txt).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
-## Running unit tests
+Copyright (c) 2022
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

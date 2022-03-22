@@ -17,7 +17,8 @@ export class ListsComponent implements OnInit {
     "You have no lists, would you like to make one"
   );
 
-  public user : User = new User(0,'','','','','',[]);
+  public static user : User = new User(0,'','','','','',[]);
+  public static theUser : any;
 
   constructor() { }
 

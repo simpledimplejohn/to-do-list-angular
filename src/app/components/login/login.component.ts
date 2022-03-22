@@ -1,3 +1,4 @@
+import { ListsComponent } from './../lists/lists.component';
 import { User } from './../../model/user';
 import { ClientMessage } from './../../model/client-message';
 import { UserService } from './../../services/user.service';
@@ -14,9 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   public clientMessage = new ClientMessage('');
+
   public user = new User(0,'','','','','',[]);
-
-
 
   public login(): void {
     let x = JSON.stringify(this.user);
@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
 
     this.userService.getWithEmailAndPassword(x)
     .subscribe(data=> {
+      ListsComponent.user = data;
       this.user = data;
       this.clientMessage.message = `Successfully login ${data.firstName}`
       this.router.navigate(['/lists'])
