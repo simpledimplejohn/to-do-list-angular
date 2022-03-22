@@ -4,7 +4,9 @@
 </div>
 <div class="mt-4 p-4 bg-light border" rounded>
   <ul *ngFor="let list of listOfLists" class="list-group w-50">
-    <li class="list-group-item">List Name: {{list.listName}}</li>
+    <li class="list-group-item">
+      <a [routerLink]="['/list-details', list.id]">List Name: {{list.listName}}</a>
+    </li>
     <li class="list-group-item">Date Created: {{list.date}}</li>
     <li class="list-group-item">Completed: {{list.complete}}</li>
     <br/>
