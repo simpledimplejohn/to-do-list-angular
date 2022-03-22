@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
     this.userService.getWithEmailAndPassword(x)
     .subscribe(data=> {
-      ListsComponent.user = data;
+      this.user = data;
       this.user = data;
       this.clientMessage.message = `Successfully login ${data.firstName}`
       this.router.navigate(['/lists'])
