@@ -1,3 +1,4 @@
+import { ToDoList } from './../model/ToDoList';
 import { Item } from './../model/Item';
 import { throwError, Observable, catchError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -19,6 +20,11 @@ export class ListService {
 
   public getItemListByListId(id:number): Observable<Item[]> {
     return this.http.get<Item[]>(`${url}/${id}/itemList`)
+      .pipe(catchError(this.handleError));
+  }
+
+  public getListById(id:number):Observable<ToDoList>{
+    return this.http.get<ToDoList>(`${url}/${id}`)
       .pipe(catchError(this.handleError));
   }
 
