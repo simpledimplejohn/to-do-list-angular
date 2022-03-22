@@ -28,7 +28,7 @@ export class ListDetailsComponent implements OnInit {
     const listIdFromRoute = Number(routeParams.get('listId'));
 
   }
-
+// find the list details from the list id number extracted from the route
   findListDetails(id:number) {
 
   }

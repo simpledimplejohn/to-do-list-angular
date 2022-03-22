@@ -14,7 +14,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
   public getUserById(id: number): Observable<User> {

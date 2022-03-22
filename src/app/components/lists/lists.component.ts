@@ -34,7 +34,7 @@ export class ListsComponent implements OnInit {
 
 
   }
-
+// this method throws a cores error
   findUser(id: number) {
     this.uServ.getUserById(id).subscribe((data) => {
       this.user = data;
