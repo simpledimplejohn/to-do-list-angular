@@ -33,8 +33,9 @@ export class ListDetailsComponent implements OnInit {
   }
 // find the list details from the list id number extracted from the route
   findListDetails(id:number) {
-    this.listServ.getItemListByListId(id).subscribe((data) => {
-      this.itemList = data;
+    this.listServ.getListById(id).subscribe((data) => {
+      this.toDoList = data;
+      this.itemList = data.taskList;
     })
 
   }

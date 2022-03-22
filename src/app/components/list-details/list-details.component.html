@@ -1,1 +1,13 @@
-<p>list-details works!</p>
+<div class="mt-4 p-4 bg-light border" rounded>
+  <h1 class="display-8">{{toDoList.listName}}</h1>
+  <p class="lead">Created: <strong>{{ toDoList.date }}</strong></p>
+  <p class="lead">Completed: {{ toDoList.complete }}</p>
+</div>
+<div class="mt-4 p-4 bg-light border" rounded>
+  <ul *ngFor="let item of itemList" class="list-group w-50">
+    <li class="list-group-item">Created: {{item.dateCreated}}</li>
+    <li class="list-group-item">Description: {{item.description}}</li>
+    <br/>
+
+  </ul>
+</div>
