@@ -8,14 +8,28 @@
     <li class="list-group-item">Created: {{item.dateCreated}}</li>
     <li class="list-group-item">Description: {{item.description}}</li>
     <li class="list-group-item">Completed: {{item.completed}}</li>
-
     <button type="button" >Mark Complete</button>
     <button type="button" >Delete Item</button>
     <br/>
-
   </ul>
-  <div>
-    <button type="button" >Add Item</button>
-  </div>
+  <form [formGroup]="addItemForm" (ngSubmit)="onSubmit()">
+    <div formArrayName="newItemList">
+      <button type="button" >Add Item</button>
+      <br/>
+      <div *ngFor="let item of newItemList.controls; let i = index">
+        <br/>
+        <div class="row g-3" [formGroupName]="i">
+          <div class="col">
+            <input class="form-control" placeholder="description" type="text" formControlName="description"/>
+          </div>
+          <div class="col">
+            <button type="button" (click)="removeItem(i)">Remove Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <button type="submit" (click)="addNewItems()">Save item/s to your list</button>
+  </form>
 
 </div>
