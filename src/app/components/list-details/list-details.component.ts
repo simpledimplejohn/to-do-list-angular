@@ -16,14 +16,12 @@ export class ListDetailsComponent implements OnInit {
 
   public toDoList = new ToDoList(0,'','',false,[]);
   public itemList: Item[] = [];
+  public clientMessage = new ClientMessage('');
 
   addItemForm: FormGroup;
 
   lid : number = this.toDoList.id;
 
-  public ClientMessage: ClientMessage = new ClientMessage(
-    "No items in this list yet"
-  );
 
   constructor(private userServ: UserService,
     private listServ: ListService,
@@ -39,7 +37,6 @@ export class ListDetailsComponent implements OnInit {
   }
 
   get newItemList() : FormArray {
-    console.log("works")
     return this.addItemForm.get('newItemList') as FormArray;
   }
 // TODO: add date to date created
@@ -74,7 +71,15 @@ export class ListDetailsComponent implements OnInit {
   }
 
   public addNewItems() : void {
-    console.log("form value: "+ this.addItemForm.value);
+    // console.log("form value: "+ this.addItemForm.value);
+    this.listServ.addItemToList(this.lid, this.addItemForm.value)
+      .subscribe(
+        (data) => {
+          this.clientMessage.message = "Successfully added item"
+          console.log("data is "+data)
+        },
+        error => this.clientMessage.message = `Error was: ${error}`
+      )
 
   }
   public onSubmit() {
