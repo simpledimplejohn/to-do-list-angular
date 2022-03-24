@@ -31,12 +31,16 @@ export class ListDetailsComponent implements OnInit {
     private fb: FormBuilder
     ) {
       this.addItemForm = this.fb.group({
-        newItemList: this.fb.array([])
+        somethingElse: [""],
+        newItemList: this.fb.array([
+          this.fb.control
+        ])
       })
   }
 
   get newItemList() : FormArray {
-    return this.addItemForm.get('newTrackList') as FormArray;
+    console.log("works")
+    return this.addItemForm.get('newItemList') as FormArray;
   }
 // TODO: add date to date created
   newItem(): FormGroup {

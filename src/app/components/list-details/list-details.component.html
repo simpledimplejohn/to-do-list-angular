@@ -14,9 +14,9 @@
   </ul>
   <form [formGroup]="addItemForm" (ngSubmit)="onSubmit()">
     <div formArrayName="newItemList">
-      <button type="button" >Add Item</button>
+      <button type="button" (click)="addItem()" >Add Item</button>
       <br/>
-      <div *ngFor="let item of newItemList?.controls; let i = index">
+      <div *ngFor="let item of newItemList.controls; let i = index">
         <br/>
         <div class="row g-3" [formGroupName]="i">
           <div class="col">
