@@ -21,7 +21,7 @@ export class UserService {
     return this.http.get<User>(`${url}/users/${id}`)
       .pipe(catchError(this.handleError));
   }
-
+/////////////////////
   public addUser(user: User): Observable<User> {
     return this.http
       .post<User>(`${url}/add`, user, this.httpOptions)

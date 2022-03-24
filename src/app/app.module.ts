@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { ListsComponent } from './components/lists/lists.component';
 import { ListDetailsComponent } from './components/list-details/list-details.component';
+import { ItemDetailsComponent } from './components/item-details/item-details.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ListDetailsComponent } from './components/list-details/list-details.com
     HomeComponent,
     LoginComponent,
     ListsComponent,
-    ListDetailsComponent
+    ListDetailsComponent,
+    ItemDetailsComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,

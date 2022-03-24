@@ -28,6 +28,7 @@ export class ListsComponent implements OnInit {
   ngOnInit(): void {
     // call this users list of ToDoLists and print
     this.findUsersLists(this.uid);
+    // this.findUser(this.uid);
     console.log(this.user);
     // this.findUser(this.uid);
 

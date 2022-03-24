@@ -16,6 +16,8 @@ export class ListDetailsComponent implements OnInit {
   public toDoList = new ToDoList(0,'','',false,[]);
   public itemList: Item[] = [];
 
+  lid : number = this.toDoList.id;
+
   public ClientMessage: ClientMessage = new ClientMessage(
     "No items in this list yet"
   );
@@ -37,7 +39,7 @@ export class ListDetailsComponent implements OnInit {
       this.toDoList = data;
       this.itemList = data.taskList;
     })
-
   }
+
 
 }

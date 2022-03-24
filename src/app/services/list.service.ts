@@ -28,6 +28,12 @@ export class ListService {
       .pipe(catchError(this.handleError));
   }
 
+  public addItemToList(id:number, item: Item): Observable<Item> {
+    return this.http
+      .post<Item>(`${url}/${id}/add`, item, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
 
 
 
