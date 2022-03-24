@@ -19,7 +19,6 @@ export class ListDetailsComponent implements OnInit {
 
   addItemForm: FormGroup;
 
-
   lid : number = this.toDoList.id;
 
   public ClientMessage: ClientMessage = new ClientMessage(
@@ -45,7 +44,7 @@ export class ListDetailsComponent implements OnInit {
       dateCreated: '',
       description: '',
       completed: false
-    });
+    })
   }
 
   addItem() {
