@@ -20,7 +20,7 @@ export class ListDetailsComponent implements OnInit {
 
   addItemForm: FormGroup;
 
-  lid : number = this.toDoList.id;
+  lid! : number;
 
 
   constructor(private userServ: UserService,
@@ -60,6 +60,7 @@ export class ListDetailsComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     const listIdFromRoute = Number(routeParams.get('listId'));
     this.findListDetails(listIdFromRoute);
+    this.lid = listIdFromRoute;
 
   }
 // find the list details from the list id number extracted from the route
@@ -72,7 +73,7 @@ export class ListDetailsComponent implements OnInit {
 
   public addNewItems() : void {
     // console.log("form value: "+ this.addItemForm.value);
-    this.listServ.addItemToList(this.lid, this.addItemForm.value)
+    this.listServ.addItemsToList(this.lid, this.addItemForm.value)
       .subscribe(
         (data) => {
           this.clientMessage.message = "Successfully added item"

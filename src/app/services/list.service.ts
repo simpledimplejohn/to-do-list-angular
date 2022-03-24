@@ -28,9 +28,9 @@ export class ListService {
       .pipe(catchError(this.handleError));
   }
 
-  public addItemToList(id:number, item: Item): Observable<Item> {
+  public addItemsToList(id:number, items: Item[]): Observable<Item> {
     return this.http
-      .post<Item>(`${url}/${id}/add`, item, this.httpOptions)
+      .post<Item>(`${url}/${id}/addArray`, items, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 
