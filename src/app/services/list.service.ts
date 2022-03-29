@@ -4,8 +4,9 @@ import { throwError, Observable, catchError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { localUrl } from './../../environments/environment';
 import { Injectable } from '@angular/core';
+import { GlobalConstants } from '../components/global-constants';
 
-const url = `${localUrl}lists`;
+const url = `${GlobalConstants.apiUrl}lists`;
 
 @Injectable({
   providedIn: 'root'

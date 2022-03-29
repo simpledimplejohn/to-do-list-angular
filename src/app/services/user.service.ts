@@ -4,8 +4,10 @@ import { localUrl } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
+import { GlobalConstants } from '../components/global-constants';
 
-const url = `${localUrl}users`;
+
+const url = `${GlobalConstants.apiUrl}users`;
 
 @Injectable({
   providedIn: 'root',

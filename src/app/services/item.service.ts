@@ -2,8 +2,9 @@ import { localUrl } from './../../environments/environment';
 import { throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { GlobalConstants } from '../components/global-constants';
 
-const url = `${localUrl}items`
+const url = `${GlobalConstants.apiUrl}items`
 
 @Injectable({
   providedIn: 'root'

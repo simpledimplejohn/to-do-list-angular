@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalConstants } from './components/global-constants';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'to-do-list';
+  constructor() {
+    console.log(GlobalConstants.apiUrl);
+  }
 }
