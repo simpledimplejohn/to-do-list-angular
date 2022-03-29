@@ -2,6 +2,9 @@
 
 This is a Mini Project created in 8 hours as an onboarding activity for Revature.
 
+## S3 deployment
+Deployed on AWS S3 bucket: [To-Do-List-App](http://to-do-list-deploy.s3-website-us-west-2.amazonaws.com/#)
+
 ## About
 
 A full-stack web-app to create and store different to-do-lists to a user account that can be accessed anywhere.

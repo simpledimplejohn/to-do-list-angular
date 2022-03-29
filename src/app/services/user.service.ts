@@ -1,6 +1,5 @@
 import { ToDoList } from './../model/ToDoList';
 import { User } from './../model/user';
-import { localUrl } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
